@@ -110,7 +110,7 @@ $breakpoints: (
 // Grid
 // ---
 
-$container-max-width: calc(1400 / $root-font-size * 1rem);
+$container-max-width: calc(1200 / $root-font-size * 1rem);
 
 // The gutter between columns
 $grid-gutter: $space-m;
@@ -289,7 +289,25 @@ a:active {
 */
 
 .o-row {
-  padding: $space-m;
+  padding: $space-m $space-m 0; // top right bottom (left=right if omitted)
+  display: flow-root; // margins niet negeren
+}
+
+.o-row--primary {
+  // niet genest is gemakkelijker indien we willen opzoeken
+  background-color: $color-primary;
+  color: white;
+}
+
+.o-row--dark {
+  background-color: $color-text;
+  color: white;
+}
+
+.o-row--l {
+  @include mq(bp2) {
+    padding: $space-l $space-l $space-m;
+  }
 }
 
 /*
@@ -299,6 +317,10 @@ a:active {
 */
 
 .o-container {
+  // margin: 0 auto; // doen we niet, aangezien we mss een andere margin willen boven en/of onder
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $container-max-width;
 }
 
 /*
