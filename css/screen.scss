@@ -3,7 +3,7 @@
 /*---------------------------------------*/
 
 // import open color
-@import "open-color";
+@import 'open-color';
 
 /*---------------------------------------/*
  # TOOLS
@@ -74,8 +74,8 @@ $ms9: calc($ms8 * $ratio); // 52px
 $ms10: calc($ms9 * $ratio); // 58px
 $ms11: calc($ms10 * $ratio); // 66px
 
-$font-family-primary: "Helvetica Neue", Helvetica, arial, sans-serif;
-$font-family-secondary: "Times New Roman", Times, serif;
+$font-family-primary: 'Helvetica Neue', Helvetica, arial, sans-serif;
+$font-family-secondary: 'Times New Roman', Times, serif;
 
 // ---
 // Settings: Spacing
@@ -128,15 +128,21 @@ $columns: (2, 3, 4, 5, 6) !default;
 *:before,
 *:after {
   // Reset box-sizing
+  box-sizing: border-box;
 }
 
 * {
   // Reset margin and font-size and font-weight
+  margin: 0;
+  font-size: 100%;
+  font-weight: normal;
 }
 
 img {
   // make images block level elements
+  display: block;
   // make images responsive
+  max-width: 100%;
 }
 
 /*---------------------------------------/*
